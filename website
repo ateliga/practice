@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заготовка HTML-сторінки</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-form-styler/dist/jquery.formstyler.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-form-styler/dist/jquery.formstyler.theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler/dist/jquery.formstyler.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -11,14 +15,17 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            background: #f0f2f5;
+            color: #333;
         }
         header {
-            background: #333;
+            background: #4CAF50;
             color: white;
             padding: 1rem;
             text-align: center;
+            font-size: 1.2rem;
         }
         nav ul {
             list-style: none;
@@ -33,38 +40,53 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #f4f4f4;
+            color: #c2eaba;
         }
         section {
-            padding: 2rem;
+            padding: 3rem;
             text-align: center;
         }
         #banner {
-            background: #f4f4f4;
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
             padding: 3rem 2rem;
             animation: fadeIn 1.5s ease-in-out;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 80%;
         }
         #contact form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             max-width: 400px;
             margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         input, textarea, button {
-            padding: 10px;
+            padding: 12px;
             font-size: 1rem;
             width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
         }
         button {
-            background: #333;
+            background: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
+            font-weight: bold;
         }
         button:hover {
-            background: #555;
+            background: #45A049;
             transform: scale(1.05);
         }
         footer {
@@ -78,7 +100,7 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         footer a {
             color: white;
@@ -151,5 +173,11 @@
             <li><a href="#">Умови використання</a></li>
         </ul>
     </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('input, textarea, select').styler();
+        });
+    </script>
 </body>
 </html>
