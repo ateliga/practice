@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заготовка HTML-сторінки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4f4f4;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        #banner {
+            background: #f4f4f4;
+            padding: 3rem 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+        }
+        button {
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #ddd;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#banner">Головна</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="banner">
+        <h1>Ласкаво просимо!</h1>
+        <p>Це приклад сторінки з основними секціями.</p>
+    </section>
+    
+    <section id="about">
+        <h2>Про нас</h2>
+        <p>Ми створюємо якісний контент для користувачів.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Форма зворотного зв'язку</h2>
+        <form action="#" method="post">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Пошта:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Номер телефону:</label>
+            <input type="tel" id="phone" name="phone" pattern="\+380[0-9]{9}" required placeholder="+380XXXXXXXXX">
+            
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message"></textarea>
+            
+            <label>
+                <input type="checkbox" name="consent" required> Я погоджуюсь на обробку персональних даних
+            </label>
+            
+            <button type="submit">Відправити</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Усі права захищені</p>
+        <ul>
+            <li><a href="#">Політика конфіденційності</a></li>
+            <li><a href="#">Умови використання</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
