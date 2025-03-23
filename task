@@ -1,0 +1,47 @@
+<?php
+
+function prompt($message) {
+    echo $message . ": ";
+    return trim(fgets(STDIN));
+}
+
+$title = prompt("Enter the blog post title");
+$author = prompt("Enter the author name");
+$category = prompt("Enter the category (separate by commas if multiple)");
+
+if (empty($title) || empty($author) || empty($category)) {
+    die("Title, author, and category must not be empty.\n");
+}
+
+$outputDir = $argv[1] ?? getcwd(); 
+$dateFormat = $argv[2] ?? "Y-m-d"; 
+
+if (isset($argv[2])) {
+    $date = date($dateFormat); 
+} else {
+    $date = date("Y-m-d"); 
+}
+
+$filename = strtolower(str_replace(' ', '-', $title)) . '-' . strtolower(str_replace(' ', '-', $author)) . '-' . date('YmdHis') . '.md';
+
+$content = "---\n";
+$content .= "title: \"$title\"\n";
+$content .= "author: \"$author\"\n";
+
+$categoryArray = array_map('trim', explode(",", $category));
+$content .= "category: [" . implode(", ", $categoryArray) . "]\n";
+
+$content .= "date: \"$date\"\n"; 
+$content .= "---\n\n";
+$content .= "Write your blog post content here...\n";
+
+if (!file_exists($outputDir)) {
+    mkdir($outputDir, 0777, true);
+}
+
+$filePath = rtrim($outputDir, '/') . '/' . $filename;
+file_put_contents($filePath, $content);
+
+echo "Blog post template generated at: " . realpath($filePath) . "\n";
+
+?>
