@@ -8,8 +8,9 @@
 ![{D2CA206C-14AD-4E70-9778-6FAB6137C3EC}](https://github.com/user-attachments/assets/68c25798-d128-4cf5-9f36-e3565e0b5f84)
 ![{8C5E3C01-4BED-4EAC-A912-2A18C69CE5E6}](https://github.com/user-attachments/assets/707d4eb7-f9a2-40c3-acf2-332acdad5c2b)
 
-Запуск з порожним полем       .
-![{148B292D-BDD5-43AA-BC0A-D5ABB4932AF1}](https://github.com/user-attachments/assets/1e4cd3a3-a76f-4d0e-b6e4-94156efe7d3a)
+Запуск з порожним полем       
+![{96C8149B-76DB-47EC-8A03-54759A21D285}](https://github.com/user-attachments/assets/49a73231-7ba0-472f-9587-f310b1c7eb81)
+
 
 
 
